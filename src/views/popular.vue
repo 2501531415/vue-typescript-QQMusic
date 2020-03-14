@@ -40,7 +40,7 @@ export default class Popular extends Vue{
         this.$router.push(`/popular/${id}`)
     }
     get singStatus(){
-        if(this.currentSong){
+        if(this.currentSong.mid){
             return true
         }else{
             return false

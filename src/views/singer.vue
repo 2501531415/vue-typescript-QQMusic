@@ -78,7 +78,7 @@ export default class ClassName extends Vue{
     }
     // 歌曲播放时
     get singStatus(){
-        if(this.currentSong){
+        if(this.currentSong.mid){
             return true
         }else{
             return false
