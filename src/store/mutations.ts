@@ -55,6 +55,15 @@ const mutation: MutationTree<any> = {
 
 
     state.PlayList.splice(index,1)
+    },
+    // 加入播放列表
+    addToPlayList(state: any,payload: any){
+        const song = state.PlayList.find((item: any)=>item.mid == payload.mid)
+        if(song){
+            return;
+        }else{
+            state.PlayList.push(payload)
+        }
     }
 }
 

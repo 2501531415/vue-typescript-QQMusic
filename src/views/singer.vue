@@ -1,7 +1,8 @@
 <template>
 <div class="singer" :class="[singStatus?'sing':'']">
-<van-index-bar :index-list="indexList" v-for="(item,index) in hot" :key="index" :index="item.title" highlight-color="red">
-  <van-index-anchor>{{item.title}}</van-index-anchor>
+<van-index-bar :index-list="indexList" v-for="(item,index) in hot" :key="index.title" highlight-color="red">
+    <van-index-anchor :index="item.title" v-if="item.title == '热'">热门</van-index-anchor>
+  <van-index-anchor :index="item.title" v-else>{{item.title}}</van-index-anchor>
     <div v-for="name in item.items" :key="name.singerId" class="content" @click="goToDetail(name.singerMid)">
         <img :src="name.avatarUrl" alt="">
         <span>{{name.singerName}}</span>
@@ -110,8 +111,6 @@ export default class ClassName extends Vue{
     margin 13px 10px
 }
 .van-index-bar__sidebar{
-    color white!important
-    font-family: sans-serif
     top 55%!important 
 }
 </style>
